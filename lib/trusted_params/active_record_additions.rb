@@ -27,7 +27,6 @@ module TrustedParams
         unless self.class.accessible_attributes && self.class.accessible_attributes.include?("all")
           attributes.each do |key, value|
             unless (self.class.accessible_attributes && self.class.accessible_attributes.include?(key.to_s)) || attributes.trusted?(key)
-              debugger
               raise ActiveRecord::UnavailableAttributeAssignmentError, "attribute \"#{key}\" is protected from mass assignment, use attr_accessible"
             end
           end
