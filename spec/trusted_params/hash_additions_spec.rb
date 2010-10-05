@@ -58,4 +58,16 @@ describe Hash do
     @hash.should be_trusted(:child)
     @hash[:child].should be_trusted(:boing)
   end
+
+  it "should preserve trust on nested attributes on dup" do
+    h = {:a => {:b => 123}}.with_indifferent_access
+    h[:a].trust(:b)
+    h.dup[:a].should be_trusted(:b)
+  end
+
+  it "should preserve trust on stringify_keys" do
+    h = {:a => 123}
+    h.trust(:a)
+    h.stringify_keys.should be_trusted(:a)
+  end
 end

@@ -3,7 +3,7 @@ module TrustedParams
     def self.included(base)
       base.extend(ClassMethods)
     end
-    
+
     module ClassMethods
       def use_trusted_params
         extend(MoreClassMethods)
