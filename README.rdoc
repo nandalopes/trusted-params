@@ -28,7 +28,7 @@ This plugin does several things.
 
 == Usage
 
-When using this plugin, you must call +use_trusted_params+ and define +attr_accessible+ in every model to allow mass assignment. You can use *:all* to mark all attributes as accessible.
+When using this plugin, you must call +use_trusted_params+ and define +attr_accessible+ in every model to allow mass assignment. You can use *\:all* to mark all attributes as accessible.
 
   class Comment < ActiveRecord::Base
     use_trusted_params
